@@ -1,6 +1,8 @@
 <launch>
+<group ns="delta2">
 	<node pkg="robot_localization" type="ukf_localization_node" name="ukf_se" clear_params="true">
 		<rosparam command="load" file="$(find robot_localization)/params/delta_ukf.yaml"/>
 		<remap from="cmd_vel" to="ros0xrobot/cmd_vel"/>
 	</node>
+</group>
 </launch>

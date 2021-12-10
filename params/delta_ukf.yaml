@@ -65,8 +65,8 @@ odom1_config: [true, true, true,
                false, false, false]
 odom1_queue_size: 2       # Odom is slower than 'frequency', so there is no point in increasing the queue size
 odom1_nodelay: true
-odom1_differential: false # We are already ignoring all absolute measurements from odom
-odom1_relative: true
+odom1_differential: true # We are already ignoring all absolute measurements from odom
+odom1_relative: false
 
 # Visual odometry from ORB-SLAM2 is being used. It acts as an absolute measurement but it also has some drift that
 # grows with time, which goes back to zero on loop closure. This means that the pose should be used as a  differential 
