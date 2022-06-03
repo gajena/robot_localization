@@ -35,16 +35,17 @@ odom1_relative: false
 odom1_queue_size: 50
 odom1_nodelay: true
 
-# pose0: orb_slam2/odom
-# pose0_config: [true,  true,  true,
-#                true,  true,  true,
-#                false, false, false,
-#                false, false, false,
-#                false, false, false]
-# pose0_differential: true
-# pose0_relative: true
-# pose0_queue_size: 4
-# pose0_nodelay: true
+odom2: zed2/zed_node/odom
+odom2_config: [true, true, true,
+               true, true, true,
+               false,  false,  false,
+               false, false, false,
+               false, false, false]
+odom2_queue_size: 2       # Odom is slower than 'frequency', so there is no point in increasing the queue size
+odom2_nodelay: true
+odom2_differential: false # We are already ignoring all absolute measurements from odom
+odom2_relative: true
+
 
 # imu0: mavros/imu/data
 # imu0_config: [false, false, false,
